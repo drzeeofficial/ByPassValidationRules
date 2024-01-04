@@ -1,0 +1,13 @@
+AND{
+NOT(Modify_Opp_Tru_Quick__c),
+OR{
+AND (ISCHANGED{StageName), PRIORVALUE(IsClosed) = true),
+AND (NOT (ISCHANGED (StageName)), IsClosed = true)
+}
+
+
+
+Create a Quick-Action and set the value of the field as true.
+Or whatever the value which can bypass the check-point of validation rules
+
+---- we can also use custom setting to do this. before the execution of the code (get and turn off the validation rule) and after the code is run and executaion is performed turn on the validation rule in the last of the code.
